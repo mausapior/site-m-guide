@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开云 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f4f0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2a2a2a;
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* hero 横幅 */
+    .hero {
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      border: 1px solid #e2ddd6;
+      border-radius: 28px;
+      padding: 3.5rem 2rem 2.8rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+
+    .hero:hover {
+      box-shadow: 0 10px 24px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.02);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 360;
+      letter-spacing: 1px;
+      color: #1f2a36;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 span {
+      font-weight: 420;
+      background: linear-gradient(145deg, #3d4a5a, #1f2a36);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .sub {
+      font-size: 1.15rem;
+      color: #5f6a78;
+      max-width: 580px;
+      margin: 0.5rem auto 0;
+      border-top: 1px solid #eae5de;
+      padding-top: 1.2rem;
+      font-weight: 320;
+    }
+
+    /* 背景说明卡片 */
+    .context-card {
+      background: #ffffff;
+      border: 1px solid #e5dfd7;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .context-card h2 {
+      font-size: 1.5rem;
+      font-weight: 380;
+      color: #2f3a46;
+      margin-bottom: 0.9rem;
+      border-left: 3px solid #b0a99b;
+      padding-left: 1rem;
+    }
+
+    .context-card p {
+      color: #3a424e;
+      max-width: 700px;
+    }
+
+    /* 三段自然介绍 — 杂志卡片群 */
+    .insight-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .insight-card {
+      background: #ffffff;
+      border: 1px solid #e5dfd7;
+      border-radius: 24px;
+      padding: 2rem 1.8rem;
+      flex: 1 1 260px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      transition: transform 0.1s ease, box-shadow 0.2s;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.03), 0 4px 8px rgba(0,0,0,0.02);
+    }
+
+    .insight-card .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #8b8579;
+      border: 1px solid #d6cfc4;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .insight-card h3 {
+      font-size: 1.35rem;
+      font-weight: 370;
+      color: #26313d;
+      margin-bottom: 0.8rem;
+    }
+
+    .insight-card p {
+      color: #424b58;
+      font-size: 0.98rem;
+    }
+
+    .insight-card p + p {
+      margin-top: 0.9rem;
+    }
+
+    /* FAQ 摘要 (杂志式点缀) */
+    .faq-note {
+      background: #fafaf7;
+      border: 1px solid #e2ddd6;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.8rem 1.8rem;
+    }
+
+    .faq-note .label {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: #7c7569;
+      font-weight: 360;
+      border-right: 1px solid #d3ccc1;
+      padding-right: 1.2rem;
+    }
+
+    .faq-note .q-item {
+      font-size: 0.98rem;
+      color: #3b4452;
+    }
+
+    .faq-note .q-item strong {
+      font-weight: 450;
+      color: #1f2a36;
+    }
+
+    /* 页尾访问提示 */
+    .footer-note {
+      background: #ffffff;
+      border: 1px solid #e5dfd7;
+      border-radius: 28px;
+      padding: 2rem 2.2rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+    }
+
+    .footer-note p {
+      font-size: 1.05rem;
+      color: #3f4a58;
+      max-width: 600px;
+      margin: 0 auto 0.6rem;
+    }
+
+    .footer-note .sentence-link {
+      background: #f0ede7;
+      display: inline-block;
+      padding: 0.3rem 1rem 0.3rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid #dad3c9;
+      transition: background 0.15s;
+    }
+
+    .footer-note .sentence-link a {
+      color: #2d3b4b;
+      text-decoration: none;
+      font-weight: 390;
+      border-bottom: 1px solid #c2b9ab;
+    }
+
+    .footer-note .sentence-link a:hover {
+      border-bottom-color: #6f7d8f;
+      color: #111a24;
+    }
+
+    .footer-note small {
+      display: block;
+      margin-top: 1.4rem;
+      font-size: 0.8rem;
+      color: #8e887c;
+      letter-spacing: 0.3px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2ddd6;
+      margin: 1.5rem 0;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.8rem; }
+      .hero { padding: 2.2rem 1.2rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .context-card, .faq-note, .footer-note { padding: 1.6rem 1.2rem; }
+      .insight-card { flex: 1 1 100%; }
+      .footer-note .sentence-link { display: inline-block; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 横幅 -->
+  <header class="hero">
+    <h1>关于<span>开云</span></h1>
+    <div class="sub">一份简明指南 · 从访问到理解</div>
+  </header>
+
+  <!-- 背景说明卡片 -->
+  <section class="context-card">
+    <h2>从哪里开始</h2>
+    <p>
+      面对一个信息密集的站点，第一次访问时往往需要一点方向。这篇文章围绕 <a href="https://site-m-kai-yun.com" style="color:#1f2a36; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #bdb4a6;">开云</a> 的定位与使用场景整理了几条线索，既不夸大也不简化，只希望让你在打开页面之前有一个清晰的印象。
+    </p>
+  </section>
+
+  <!-- 三段自然介绍 -->
+  <div class="insight-grid">
+    <article class="insight-card">
+      <span class="tag">01 · 结构</span>
+      <h3>信息层次</h3>
+      <p>整个站点采用卡片式分区，每个模块承担一种叙述功能：从概述到细节，再到可操作的入口。你不需要一次性读完所有内容，按需浏览即可。</p>
+      <p>导航的逻辑遵循“先总览后展开”，多数页面都保留了一条返回上一级的路径，适合边走边看。</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="tag">02 · 场景</span>
+      <h3>谁在用</h3>
+      <p>日常访问者通常带着具体的疑问或兴趣点进入——有人想了解背景，有人在寻找某项功能说明，也有部分人只是初次路过。站点内容倾向于克制、直接，不堆砌术语。</p>
+      <p>如果你习惯先看框架再读细节，可以从首页的几个分区开始；如果你更想直接定位某一段信息，内部搜索或侧边摘要会更快。</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="tag">03 · 节奏</span>
+      <h3>阅读建议</h3>
+      <p>不必抱着“必须看完”的心态。每一段都相对独立，段落间留有一定的停顿感。甚至你可以只阅读标题和小结，一样能获得大致轮廓。</p>
+      <p>另外，部分页面底部附有简短注释或外部引用，它们不是补充说明，而是另一种视角的旁注。感兴趣的话可以顺带一瞥。</p>
+    </article>
+  </div>
+
+  <!-- FAQ 摘要（杂志风格点缀） -->
+  <div class="faq-note">
+    <span class="label">常见疑问</span>
+    <span class="q-item"><strong>是否需要注册？</strong> 站内大部分内容可直接浏览，无需创建账户。</span>
+    <span class="q-item"><strong>内容更新频率？</strong> 不定期补充，每次调整会在 changelog 段落注明。</span>
+    <span class="q-item"><strong>移动端适配？</strong> 版面随屏幕宽度自动调整，卡片间距在窄屏下略有压缩。</span>
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <footer class="footer-note">
+    <p>
+      若你尚未访问过该站点，可先通过下方链接直接前往
+      <span class="sentence-link"><a href="https://site-m-kai-yun.com">开云</a></span>，
+      首页会为你提供全景式的分区导览。
+    </p>
+    <p style="font-size:0.95rem; color:#5d6775; margin-top:0.2rem;">
+      之后的每一次返回，都可以从你上次离开的位置继续。
+    </p>
+    <hr>
+    <small>杂志专题式索引 · 简明访问提醒</small>
+  </footer>
+
+</div>
+</body>
+</html>
