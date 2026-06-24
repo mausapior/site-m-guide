@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 轻量导航页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e1e2a;
+      background: #f7f8fc;
+      line-height: 1.6;
+    }
+
+    /* 深色头图 — 导航 + hero 合一 */
+    .hero-nav {
+      background: linear-gradient(145deg, #0e1322 0%, #1c2338 100%);
+      color: #f0f3ff;
+      padding: 2rem 1.5rem 3.5rem;
+      border-bottom: 4px solid #f7b32b;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      font-size: 0.95rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .top-nav a {
+      color: #cbd5f0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .top-nav a:hover {
+      color: #f7b32b;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-top: 2rem;
+      line-height: 1.2;
+    }
+
+    .hero-title span {
+      color: #f7b32b;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin-top: 0.8rem;
+      color: #cfd9f0;
+      opacity: 0.9;
+    }
+
+    .hero-meta {
+      margin-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      font-size: 0.95rem;
+      color: #a3b1da;
+    }
+
+    .hero-meta i {
+      font-style: normal;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-meta a {
+      color: #f7b32b;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero-meta a:hover {
+      text-decoration: underline;
+    }
+
+    /* 正文浅色区 */
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #0e1322;
+      border-left: 5px solid #f7b32b;
+      padding-left: 1rem;
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      color: #2d3045;
+      margin-bottom: 2.5rem;
+      max-width: 780px;
+    }
+
+    .intro-text a {
+      color: #c07b1e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .intro-text a:hover {
+      color: #0e1322;
+    }
+
+    /* 三场景卡片 */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #eaedf5;
+    }
+
+    .scene-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .scene-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #1c2338;
+    }
+
+    .scene-card h3 i {
+      display: inline-block;
+      background: #f7b32b20;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      font-style: normal;
+      font-size: 0.85rem;
+      color: #b17217;
+      margin-left: 0.4rem;
+    }
+
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #3e4259;
+      line-height: 1.7;
+    }
+
+    .scene-card a {
+      color: #c07b1e;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* 常见说明 — 紧凑问答 */
+    .faq-compact {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2rem 1.8rem;
+      margin-top: 2.5rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e6eaf3;
+    }
+
+    .faq-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #eef1f8;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #0e1322;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-a {
+      font-size: 0.95rem;
+      color: #3e4259;
+    }
+
+    .faq-a a {
+      color: #c07b1e;
+      text-decoration: underline;
+    }
+
+    .footnote {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #dce0ec;
+      font-size: 0.9rem;
+      color: #5f6580;
+      text-align: center;
+    }
+
+    .footnote a {
+      color: #c07b1e;
+      text-decoration: none;
+    }
+
+    .footnote a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .hero-nav {
+        padding: 1.5rem 1rem 2.5rem;
+      }
+      .top-nav {
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      .hero-title {
+        margin-top: 1.2rem;
+      }
+      .content {
+        padding: 2rem 1rem 3rem;
+      }
+      .faq-compact {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 + 导航 -->
+  <header class="hero-nav">
+    <div class="hero-inner">
+      <nav class="top-nav">
+        <a href="#intro">介绍</a>
+        <a href="#scenes">场景</a>
+        <a href="#faq">说明</a>
+      </nav>
+      <h1 class="hero-title">
+        稳定入口 · <span>爱游戏</span>
+      </h1>
+      <p class="hero-desc">
+        一个专注游戏内容的轻量入口，页面结构清晰，日常查找更省心。
+      </p>
+      <div class="hero-meta">
+        <i>🔄 持续维护</i>
+        <i>📁 分类明确</i>
+        <i>✨ 访问 <a href="https://home-portal-igame.com">爱游戏</a> 直达导航</i>
+      </div>
+    </div>
+  </header>
+
+  <!-- 正文浅色区域 -->
+  <main class="content">
+
+    <!-- 核心介绍 -->
+    <section id="intro">
+      <h2 class="section-title">关于这个入口</h2>
+      <p class="intro-text">
+        很多朋友希望有个稳定的地方，能快速找到自己关注的游戏信息。<a href="https://home-portal-igame.com">爱游戏</a> 
+        就是这样一个位置：没有复杂跳转，页面以实用导航和内容聚合为主，适合每天打开看看。
+        无论你是找最近更新，还是想回顾某个经典内容，这里都可以作为一个安静的起点。
+      </p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes">
+      <h2 class="section-title">日常使用场景</h2>
+      <div class="scene-grid">
+        <div class="scene-card">
+          <h3>📋 浏览与发现 <i>常用</i></h3>
+          <p>
+            打开页面后，分类入口清晰排列。想看看最近有哪些值得留意的新内容，直接通过首页模块就能了解概况。适合碎片时间随手翻阅。
+          </p>
+        </div>
+        <div class="scene-card">
+          <h3>🔍 查找特定内容 <i>准确</i></h3>
+          <p>
+            页面内提供直达链接和频道分类。比如你想直接跳转到某个固定栏目，使用顶部导航或相关文字链就可以。入口集中，不必反复搜索。
+          </p>
+        </div>
+        <div class="scene-card">
+          <h3>🧭 日常回访 <i>习惯</i></h3>
+          <p>
+            把 <a href="https://home-portal-igame.com">爱游戏</a> 加入书签后，每次访问都是同样的结构，不必重新适应。适合作为每天打开浏览的固定页面之一。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <section id="faq" class="faq-compact">
+      <h2 class="section-title" style="border-left-color: #f7b32b;">常见说明</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">这个页面和爱游戏是什么关系？</div>
+        <div class="faq-a">
+          这是为 <a href="https://home-portal-igame.com">爱游戏</a> 制作的轻量介绍页，帮助新朋友了解页面的定位与内容方向，
+          同时也作为导航说明页存在。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">页面会频繁变化吗？</div>
+        <div class="faq-a">
+          整体结构保持稳定，内容会根据实际运营做适度更新，确保链接有效、分类合理。不会突然改版让老用户困惑。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">移动端浏览体验如何？</div>
+        <div class="faq-a">
+          页面采用响应式设计，手机、平板、电脑都可以正常浏览。卡片布局会自动适配屏幕宽度，阅读体验有保障。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">有建议或反馈怎么联系？</div>
+        <div class="faq-a">
+          目前主要通过页面内的导航入口获取最新信息。你也可以在相关社区或平台留言，运营团队会定期关注。
+        </div>
+      </div>
+    </section>
+
+    <div class="footnote">
+      <p>© 爱游戏 · 一个让你更舒服找到游戏内容的地方 · <a href="https://home-portal-igame.com">爱游戏</a></p>
+    </div>
+
+  </main>
+
+</body>
+</html>
