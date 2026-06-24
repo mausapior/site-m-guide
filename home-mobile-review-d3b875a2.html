@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 — 资料整理与索引笔记</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f7f5;
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+      color: #2d2b28;
+      line-height: 1.9;
+      padding: 2.8rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 640px;
+      width: 100%;
+    }
+
+    .site-title {
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #9a8c7e;
+      border-bottom: 1px solid #e2dcd5;
+      padding-bottom: 1.4rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .site-title a {
+      text-decoration: none;
+      color: #2d2b28;
+      border-bottom: 1px dotted #bcb0a3;
+      transition: border-color 0.2s;
+    }
+
+    .site-title a:hover {
+      border-bottom-color: #2d2b28;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+      color: #1a1816;
+    }
+
+    .byline {
+      color: #8f8378;
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-bottom: 2.2rem;
+      border-left: 2px solid #d3c9c0;
+      padding-left: 1rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-top: 2.8rem;
+      margin-bottom: 0.8rem;
+      color: #2d2b28;
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      margin-bottom: 1.6rem;
+      font-size: 1rem;
+    }
+
+    .pull-quote {
+      background-color: #f0ece7;
+      border-left: 4px solid #b8aa9b;
+      padding: 1.2rem 1.6rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      color: #3f3a35;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .pull-quote em {
+      font-style: normal;
+      font-weight: 500;
+      color: #5c5248;
+    }
+
+    .insight-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.8rem 0 2.2rem;
+    }
+
+    .insight-list li {
+      border-bottom: 1px solid #eae4de;
+      padding: 0.7rem 0;
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .insight-list li::before {
+      content: "·";
+      color: #b8aa9b;
+      font-weight: bold;
+      font-size: 1.2rem;
+      line-height: 1.9;
+    }
+
+    .faq-note {
+      background: #fff;
+      border: 1px solid #e2dcd5;
+      border-radius: 6px;
+      padding: 1.6rem 1.8rem;
+      margin-top: 2.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .faq-note summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #4a423c;
+      padding: 0.2rem 0;
+    }
+
+    .faq-note summary::-webkit-details-marker {
+      color: #b8aa9b;
+    }
+
+    .faq-note p {
+      margin-top: 0.8rem;
+      margin-bottom: 0.2rem;
+      font-size: 0.95rem;
+      color: #4f4943;
+    }
+
+    .closing {
+      font-size: 0.95rem;
+      color: #6f645b;
+      border-top: 1px solid #e2dcd5;
+      padding-top: 2rem;
+      margin-top: 2.8rem;
+      text-align: right;
+    }
+
+    .closing a {
+      color: #3f3a35;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #cbc1b6;
+    }
+
+    .closing a:hover {
+      text-decoration-color: #3f3a35;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 2rem 1rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .faq-note {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="site-title">
+      <a href="https://home-mobile-igame.com">爱游戏</a> · 索引笔记
+    </div>
+
+    <h1>从资料收集到信息整理：<br>一种围绕游戏内容的索引方法</h1>
+    <div class="byline">写于 2025 · 日常笔记</div>
+
+    <p>在信息过载的时代，如何从游戏资讯中快速定位到真正有用的内容，成为许多玩家与资料整理者的共同课题。无论是攻略、剧情梳理，还是版本更新日志，一个清晰的索引结构往往比零散的收藏夹更能节省时间。本文从一个具体的信息聚合站点出发，梳理资料整理的方法与思路。</p>
+
+    <p>过去几年里，我逐步尝试将分散在各类平台上的游戏相关内容进行归类。最初只是简单地按游戏名称建立文件夹，但很快发现，同一款游戏不同维度的信息——比如机制解析、隐藏成就、角色背景——如果用扁平化的方式存储，查找效率反而下降。于是我开始引入「主题卡片」的概念：每张卡片包含核心摘要、来源链接以及一条个人备注。这种方法后来也被我应用在 <a href="https://home-mobile-igame.com">爱游戏</a> 的内容浏览中，它帮助我将碎片化的阅读沉淀为可复用的知识节点。</p>
+
+    <div class="pull-quote">
+      <em>索引不是目的，而是通往理解的路径。</em> 真正重要的是，当你需要时，能够准确回忆起某条信息所处的上下文。
+    </div>
+
+    <h2>索引结构的三个层次</h2>
+
+    <p>经过反复调整，我逐渐形成了一套三层索引体系。第一层是「入口层」，对应游戏的大类或平台；第二层是「专题层」，比如某个大版本、某个活动周期或某个系列作的整体脉络；第三层是「细节层」，包含具体的数值、时间点、对话选项等。这一结构并非绝对，但至少保证了从宏观到微观的递进关系，不至于让信息沉没在无差别的列表里。</p>
+
+    <p>例如，当我想回顾某款手游近三个月的活动排期时，我会先进入该游戏的专题页，然后按时间轴筛选，最后在细节层比对不同活动的奖励与任务条件。如果缺少中间层，直接翻阅原始公告很容易遗漏关联信息。在这方面，<a href="https://home-mobile-igame.com">爱游戏</a> 的页面组织方式给了我不少启发——它把碎片内容用主题串联，而不是单纯罗列标题。</p>
+
+    <h2>常见的资料整理陷阱</h2>
+
+    <ul class="insight-list">
+      <li>过度分类导致层级过深，最终自己都不愿翻找——建议最深层不超过三级。</li>
+      <li>只收藏不整理，书签或笔记越积越多，但检索成本直线上升。</li>
+      <li>忽略标注日期与来源。游戏版本频繁更迭，一条半年前的攻略可能已经失效。</li>
+      <li>追求全面而忘记聚焦。好的索引应该优先收录对你当前需求最有价值的内容。</li>
+    </ul>
+
+    <p>以上几点是我自己在整理过程中踩过的坑。信息整理不是一次性的工作，而需要周期性的修剪与重组。每隔一两个月，我会重新审视自己的索引结构，删掉过时条目，合并相似主题，并补充新发现的内容。这个过程本身也帮助我加深了对游戏机制的理解。</p>
+
+    <div class="faq-note">
+      <details>
+        <summary>FAQ 摘要 — 关于资料索引的常见疑问</summary>
+        <p><strong>问：</strong> 整理时应该优先使用表格还是纯文本？<br>
+        <strong>答：</strong> 取决于信息的结构化程度。数值类内容适合表格，概念或技巧类内容更适合带标签的纯文本段落。混合使用往往效果更好。</p>
+        <p><strong>问：</strong> 索引需要包含全部细节吗？<br>
+        <strong>答：</strong> 不需要。索引的核心是「指向」，而非「存储」。把完整内容放在链接指向的位置，索引本身保持精简。</p>
+      </details>
+    </div>
+
+    <p>如果把资料整理比作搭建一座图书馆，那么索引就是书架上的编号与导览图。它不直接提供知识，却能让你在需要时最快速地找到对应的那一本书。对于喜欢深入钻研游戏内容的玩家来说，花一点时间建立属于自己的索引体系，远比每天漫无目的地刷新资讯源更有长期价值。而像 <a href="https://home-mobile-igame.com">爱游戏</a> 这样的站点，则可以作为一个现成的参照样本，帮助你理解信息聚合与分类展示的多种可能。</p>
+
+    <div class="closing">
+      下次再整理笔记时，或许可以试着换一个角度重新组织你的收藏夹。<br>
+      —— 关于 <a href="https://home-mobile-igame.com">爱游戏</a> 的一些整理心得
+    </div>
+  </div>
+</body>
+</html>
